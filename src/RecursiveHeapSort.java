@@ -9,13 +9,10 @@ public class RecursiveHeapSort {
             rh.heapSort(array);
             System.out.println(Arrays.toString(array));
     }
-
-
     public void heapSort(int[] array) {
         createHeap(array, array.length / 2);
         heapSortRecursion(array,array.length-1);
     }
-
     private void heapSortRecursion(int[] array, int begin)
     {
         if (begin == 0)
@@ -26,8 +23,6 @@ public class RecursiveHeapSort {
             heapSortRecursion(array,--begin);
         }
     }
-
-
     private void createHeap(int[] array, int begin)
     {
         if (begin < 0)
@@ -38,7 +33,6 @@ public class RecursiveHeapSort {
         }
 
     }
-
     private void sink(int[] array, int nodeId, int lastId)
     {
         if ((leftChildOf(nodeId) > lastId) || (rightChildOf(nodeId) > lastId))
@@ -60,14 +54,12 @@ public class RecursiveHeapSort {
 
         }
     }
-
     private void swapAtIndex(int[] array, int one, int two)
     {
         int temp = array[one];
         array[one] = array[two];
         array[two] = temp;
     }
-
     private int rightChildOf(int nodeId) {
         return nodeId * 2 + 2;
     }
@@ -75,5 +67,4 @@ public class RecursiveHeapSort {
     {
         return nodeId*2+1;
     }
-
 }
