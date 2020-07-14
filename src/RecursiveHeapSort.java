@@ -25,7 +25,7 @@ public class RecursiveHeapSort {
     }
     private void createHeap(int[] array, int begin)
     {
-        if (begin < 0)
+        if (begin < 1)
             return;
         else {
             sink(array, begin, array.length-1);
