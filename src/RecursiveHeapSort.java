@@ -5,6 +5,7 @@ public class RecursiveHeapSort {
     public static void main(String[] args)
     {
             int[] array = {1,51,7,12312,1,23,2};
+            int[] array2 = {7,4,5,6,8,9,10,1};
             RecursiveHeapSort rh = new RecursiveHeapSort();
             rh.heapSort(array);
             System.out.println(Arrays.toString(array));
@@ -15,7 +16,7 @@ public class RecursiveHeapSort {
     }
     private void heapSortRecursion(int[] array, int begin)
     {
-        if (begin == 0)
+        if (begin <= 1)
             return;
         else {
             swapAtIndex(array,0,begin);
@@ -25,7 +26,7 @@ public class RecursiveHeapSort {
     }
     private void createHeap(int[] array, int begin)
     {
-        if (begin < 1)
+        if (begin < 0)
             return;
         else {
             sink(array, begin, array.length-1);
